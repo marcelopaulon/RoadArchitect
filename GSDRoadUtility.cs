@@ -3131,9 +3131,8 @@ namespace GSD.Roads{
 
 	public static class GSDRoadUtil{
 		private const string FileSepString = "\n!!!! MICROGSD !!!!\n";
-        private const string FileSepStringCRLF = "\r\n!!!! MICROGSD !!!!\r\n";
 
-        public static Terrain GetTerrain(Vector3 tVect){
+		public static Terrain GetTerrain(Vector3 tVect){
 			return GetTerrain_Do(ref tVect);
 		}
 		private static Terrain GetTerrain_Do(ref Vector3 tVect){
@@ -3986,9 +3985,8 @@ namespace GSD.Roads{
 			}
 
 	        string tData = System.IO.File.ReadAllText(tPath);
-			string[] tSep = new string[2];
-            tSep[0] = FileSepString;
-            tSep[1] = FileSepStringCRLF;
+			string[] tSep = new string[1];
+			tSep[0] = FileSepString;
 			string[] tSplit = tData.Split(tSep,System.StringSplitOptions.RemoveEmptyEntries);
 
 			Splination.SplinatedMeshMaker SMM = null;
@@ -4224,9 +4222,8 @@ namespace GSD.Roads{
 				return null;
                 #else
 				string tData = System.IO.File.ReadAllText(tPath);
-				string[] tSep = new string[2];
-                tSep[0] = FileSepString;
-                tSep[1] = FileSepStringCRLF;
+				string[] tSep = new string[1];
+				tSep[0] = FileSepString;
 				string[] tSplit = tData.Split(tSep,System.StringSplitOptions.RemoveEmptyEntries);
 				int tSplitCount = tSplit.Length;
 				WizardObjectLibrary WOL = null;
